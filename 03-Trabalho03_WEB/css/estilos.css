@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================================
+    Configura o cabeçalho das páginas
+===================================================*/
+
+/*Configura o fundo do cabeçalho*/
+#cabecalho {
+    text-align: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+   
+    background-image: url("../img/hotelHome.jpg");
+    background-position: center; /* Mostra o centro da imagem*/
+   
+    border: 1px solid gray;
+    padding: 30px;
+    height: 100px;
+}
+
+/*Configura o título do cabeçalho*/
+#cabecalho h1 {
+    text-shadow: 1px 1px 1px #FFF;
+    padding: 15px 15px;
+}
+
+/* ================================================
+    Configura a barra de navegação das páginas
+===================================================*/
+#navbar ul {
+    list-style-type: none; /*Isso retira os pontinhos ao lado da lista*/
+    overflow: hidden; /*Ele deveria mexer apenas na posição do texto, mas está mexendo na cor*/
+    
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+
+    text-align: center;
+    padding-left: 25%;  /* Isso alinha os itens no menu*/
+
+    position: relative;
+}
+
+#navbar li {
+    float: left; /*Cada item da lista é */
+    border-right: 1px solid #bbb;
+}
+
+#navbar li:last-child { /*retira a borda direita do último item da lista*/
+    border-right: none;
+}
+
+#navbar li a {
+    display: block; /*Isso faz com que o elemento se torne um bloco e o bloco seja selecionado, não apenas o texto*/
+    text-decoration: none; /*Isso retira os sublinhados de link*/
+
+    color: #111;
+    text-align: center;
+
+    padding: 10px 16px;
+}
+
+#navbar a:hover {
+    background-color: darkgray;
+}
+
+.home #navbar #pag1 {
+    /*Isso mostra a página atual na barra de menu*/
+    background-color: gray;
+}
+
+.o-hotel #navbar #pag2 {
+    /*Isso mostra a página atual na barra de menu*/
+    background-color: gray;
+}
+
+.acomodacoes #navbar #pag3 {
+    /*Isso mostra a página atual na barra de menu*/
+    background-color: gray;
+}
+
+.reservas #navbar #pag4 {
+    /*Isso mostra a página atual na barra de menu*/
+    background-color: gray;
+}
+
+/* ================================================
+    Configura a seção de conteúdos, que é onde as
+    informações da página são apresentadas
+===================================================*/
+.content {
+    text-align: justify;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
+    background-color: white;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 0px 10px gray;
+
+    margin: 5% 20%;
+    padding: 3%;
+    position: relative;
+    clear:both;
+   
+}
+
+.content p {
+    padding: 10px;
+}
+
+.content span {
+    padding: 10px;
+}
+
+.content h3{
+    border-bottom: 2px solid gray;
+}
+
+/* ================================================
+    Configura o rodapé das páginas
+===================================================*/
+footer {
+    text-align: center;
+    background-color:cadetblue;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+/* ================================================
+    Configura o Slider, que é um container que guarda
+    várias imagens para serem mostradas conforme o 
+    usuário aperta um botão
+===================================================*/
+.slider {
+    display: block;
+    height: 450px;
+    width: 500px;
+    margin: 20px;
+    position: relative;
+}
+
+.slider li {
+    list-style: none;
+    margin: auto 20%; /*Isso faz com que a imagem fique posicionada em uma determinada localização da seção de conteúdo*/
+    position: absolute;
+}
+
+.slider img {
+    margin: auto;
+    height: 300px;
+    width: 400px;
+    vertical-align: top;
+}
+
+.slider .imgLegend{
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+.slider .imgDesc{
+    background-color: #bbb;
+    text-align: justify;    
+}
+
+.slider input {
+    display: none;
+}
+
+.slider label {
+    display: block;
+    cursor: pointer;
+
+    background-color:red;
+
+    top:0;
+    bottom: 10px;
+    height: 10px;
+    width: 10px;
+
+    z-index: 10;
+    position: absolute;
+}
+
+/*Posições dos quadradinhos que representam os botões*/
+.slider li:nth-child(1) label {
+    right: 130px;
+}
+
+.slider li:nth-child(2) label {
+    right: 100px;
+}
+
+.slider li:nth-child(3) label {
+    right: 70px;
+}
+
+.slider li:nth-child(4) label {
+    right: 40px;
+}
+
+.slider li:nth-child(5) label {
+    right: 10px;
+}
+
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+.slider .imgLegend{
+    opacity: 0;
+    visibility: hidden;   
+}
+.slider .imgDesc{
+    opacity: 0;
+    visibility: hidden;   
+}
+
+.slider li input:checked~img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+.slider li input:checked~div { /*Ainda não entendi muito bem como o z-index funciona*/
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+/*================================================
+    Configura as amostras de preços
+===================================================*/
+#precosVagas{
+    text-align: center;
+    border: 1px solid #111;
+    background-color: greenyellow;
+    margin:2% 25%;
+}
+
+#precosVagas th{
+    border: 1px solid black;
+    background-color: orangered;
+}
+
+#precosVagas td{
+    border: 1px solid black;
+    background-color: orange;
+}
+
+#formasPag{
+    margin: 2%;
+}
+#formasPag img{
+    width: 10%;
+    height: 20%;
+}
+
+/*================================================
+    Configura a página de reservas
+===================================================*/
+#reservaForm fieldset{
+    padding:5%;
+    margin: 2%;
+    text-align: justify;
+}
+
+#reservaForm span{
+    display:block;
+}
+
+#reservaForm #reservar + span{
+    float: left;
+}
+
+body{
+    background-color:darkturquoise;
+}
+

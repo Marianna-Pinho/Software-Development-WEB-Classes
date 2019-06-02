@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Hotel Luar do Sertão</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="reservas">
+    <!-- Cabeçalho -->
+    <div id="cabecalho">
+        <h1>Hotel Luar do Sertão</h1>
+        <h5>Rua Dr. Rui Maia, Centro, Zona Urbana, Quixadá-CE, 63190-195</h5>
+        <h5>luardosertao.hotel@gmail.com</h5>
+        <h5>(88)3442-8922</h5>
+    </div>
+
+    <!-- Barra de navegação -->
+    <div id="navbar">
+        <ul>
+            <li><a href="pagina-inicial.html" id="pag1">Página Inicial</a></li>
+            <li><a href="o-hotel.html" id="pag2">O Hotel</a></li>
+            <li><a href="acomodacoes.html" id="pag3">Acomodações</a></li>
+            <li><a href="solicitar-reservas.html" id="pag4">Solicitar Reservas</a></li>
+        </ul>
+    </div>
+
+    <section class="content">
+        <h2>Faça já sua reserva em um dos melhores hotéis do Sertão Central!</h2>
+
+        <!-- Formulário-->
+        <form id="reservaForm" action="GET">
+            <fieldset>
+                <legend> Formulário de Reserva </legend>
+
+                <span> Nome: <input type="text" name="nome" placeholder="Digite seu nome completo" id="nome"> </span>
+                <span>Cpf: <input type="text" name="cpf" placeholder="Digite seu cpf sem pontos e traços" id="cpf">
+                </span>
+                <span> Email: <input type="email" name="email" placeholder="Digite seu email" id="email"></span>
+                <span>Telefone: <input type="tel" name="telefone" placeholder="(xx)xxxxxxxxx" id="telefone"></span>
+                <span> Data de Entrada: <input type="date" id="dataIn"></span>
+                <span> Data de Saída: <input type="date" id="Dataout"></span>
+                <span> Qtd de Pessoas: <input type="number" min="1" max="4" name="qtdPessoas" id="Pessoas"></span>
+                <span>Tipo de quarto:
+                    <input type="checkbox" name="bQuarto" id="sLuxo"> Suíte de Luxo
+                    <!-- Para que os botões radio funcionem corretamente, eles devem ter o mesmo nome-->
+                    <input type="checkbox" name="bQuarto" id="sPrem"> Suíte Premium
+                    <input type="checkbox" name="bQuarto" id="sPres"> Suíte Presidencial</span>
+                <span>Forma de pagamento:
+                    <input type="radio" name="bPag" value="dinheiro" id="dinheiro"> Dinheiro
+                    <input type="radio" name="bPag" value="credito" id="credito"> Cartão de Crédito
+                    <input type="radio" name="bPag" value="debito" id="debito"> Cartão de Débito</span>
+
+                <span><input type="submit" name="submit" value="Reservar" id="submit">
+                    <input type="reset" name="reset" value="Cancelar" id="reset"></span>
+            </fieldset>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        Marianna de Pinho Severo - Trabalho 03 (WEB)
+    </footer>
+</body>
+
+</html>

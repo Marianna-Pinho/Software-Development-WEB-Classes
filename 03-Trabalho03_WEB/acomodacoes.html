@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Hotel Luar do Sertão</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="acomodacoes">
+    <!-- Cabeçalho -->
+    <div id="cabecalho">
+        <h1>Hotel Luar do Sertão</h1>
+        <h5>Rua Dr. Rui Maia, Centro, Zona Urbana, Quixadá-CE, 63190-195</h5>
+        <h5>luardosertao.hotel@gmail.com</h5>
+        <h5>(88)3442-8922</h5>
+    </div>
+
+    <!-- Barra de navegação -->
+    <div id="navbar">
+        <ul>
+            <li><a href="pagina-inicial.html" id="pag1">Página Inicial</a></li>
+            <li><a href="o-hotel.html" id="pag2">O Hotel</a></li>
+            <li><a href="acomodacoes.html" id="pag3">Acomodações</a></li>
+            <li><a href="solicitar-reservas.html" id="pag4">Solicitar Reservas</a></li>
+        </ul>
+    </div>
+
+    <section class="content">
+        <h3>Quartos</h3>
+        <p>
+            O Hotel Luar do Sertão possui três tipos de quartos: Suíte de Luxo, Suíte Premium e Suíte Presidencial.
+            O preço de cada uma e o total de vagas disponíveis atualmente podem ser observados em <a
+                href="#precosSuites">Preços e
+                Vagas</a>.
+            Abaixo, imagens de nossos quartos:
+        </p>
+
+        <ul class="slider">
+            <li>
+                <input type="radio" id="slide1" name="slide" checked>
+                <label for="slide1"></label>
+                <img src="img/suiteLuxo.jpg" alt="suiteLuxo">
+                <div class="imgLegend">
+                    Suíte de Luxo
+                </div>
+                <div class="imgDesc">
+                    A Suíte de Luxo possui uma cama de casal, banheiro com chuveiro elétrico e banheira,
+                    ar-condicionado (deve
+                    ser desligado sempre que os hóspedes forem sair por muito tempo do quarto), lareira e mesa para
+                    refeições.
+                </div>
+
+            </li>
+            <li>
+                <input type="radio" id="slide2" name="slide">
+                <label for="slide2"></label>
+                <img src="img/suitePremium.jpg" alt="suitePremium">
+                <div class="imgLegend">
+                    Suíte Premium
+                </div>
+                <div class="imgDesc">
+                    A Suíte Premium possui uma cama de casal, banheiro com chuveiro elétrico e banheira,
+                    ar-condicionado (deve ser desligado sempre que os hóspedes forem sair por muito tempo do quarto),
+                    além de frigobar livre, lareira e mesa para refeições.
+                </div>
+            </li>
+            <li>
+                <input type="radio" id="slide3" name="slide">
+                <label for="slide3"></label>
+                <img src="img/suitePresidencial.jpg" alt="suitePresidencial">
+                <div class="imgLegend">
+                    Suíte Presidencial
+                </div>
+                <div class="imgDesc">
+                    A Suíte Presidencial possui uma cama de casal, banheiro com chuveiro elétrico e banheira,
+                    ar-condicionado (deve ser desligado sempre que os hóspedes forem sair por muito tempo do quarto),
+                    além de frigobar livre, banheira de hidromassagem, lareira, mesa para refeições e televisão com
+                    canais por assinatura.
+                </div>
+            </li>
+        </ul>
+
+        <!--Tabela-->
+        <h3 id="precosSuites">Preços e Vagas</h3>
+
+        <table id="precosVagas">
+            <tr>
+                <th>Tipo de Suíte</th>
+                <th>Diária</th>
+                <th>Vagas disponíveis</th>
+            </tr>
+            <tr>
+                <td>Luxo</td>
+                <td>R$ 100,00</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Premium</td>
+                <td>R$ 150,00</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Presidencial</td>
+                <td>R$ 350,00</td>
+                <td>7</td>
+            </tr>
+        </table>
+
+        <!-- Formas de pagamento-->
+        <h3>Formas de Pagamento</h3>
+        <div id="formasPag">
+            <span>
+                <img src="img/cashIcon.jpg" alt="cash">
+            </span>
+            <span> À vista ou até 3x sem juros</span>
+            <span>
+                <img src="img/cartaoIcon.png" alt="cartao">
+            </span>
+            <span> Visa, Mastercard, Ourocard</span>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        Marianna de Pinho Severo - Trabalho 03 (WEB)
+    </footer>
+</body>
+
+</html>

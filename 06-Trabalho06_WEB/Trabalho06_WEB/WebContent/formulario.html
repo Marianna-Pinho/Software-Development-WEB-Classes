@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Formulário de Inscrição</title>
+	</head>
+	<body>
+		<h1>Formulário de Inscrição</h1>
+		
+		<form action="adicionaPessoa" method="post">
+			Nome: <input type="text" name="nome">
+			<br>
+			Time: <input type="text" name="time">
+			<br>
+			Hobbies:<br>
+			<select name="hobbies" multiple>
+				<option value="Nenhum" selected>Sem Hobbies</option>
+				<option value="Futebol">Jogar Futebol</option>
+				<option value="Pescar">Pescar</option>
+				<option value="Cozinhar">Cozinhar</option>
+				<option value="Desenhar">Desenhar</option>
+				<option value="AssistirSerie">Assistir Séries</option>
+				<option value="Bicicleta">Andar de Bicicleta</option>	
+			</select>	
+			<br>
+			<input type="submit" value="Salvar">	
+		</form>
+		
+	</body>
+</html>
