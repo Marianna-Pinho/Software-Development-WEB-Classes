@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Página Inicial</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+
+	<!-- Barra de navegação -->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+		<a class="navbar-brand" href="/restaurante/paginaInicial"> <img
+			src="/img/logo2.png" width="100" height="50"
+			class="d-inline-block align-top" alt="LogoMarca">
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+
+				<li class="nav-item active"><a class="nav-link"
+					href="/restaurante/paginaInicial">Página Inicial <span
+						class="sr-only">(current)</span></a></li>
+
+				<li class="nav-item"><a class="nav-link"
+					href="/restaurante/listarPratos">Galeria de Pratos</a></li>
+
+				<li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item"><a
+					class="nav-link" href="/restaurante/formularioPrato">Cadastrar
+						Pratos</a></li>
+
+				<li sec:authorize="hasRole('ROLE_CLIENT')" class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+					aria-haspopup="true"> Pedidos </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/restaurante/carrinhoCompras">Carrinho
+							de Compras</a> <a class="dropdown-item"
+							href="/restaurante/historicoPedidos">Histórico de Pedidos</a>
+					</div>
+				</li>
+
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<li sec:authorize="!isAuthenticated()" class="nav-item"><a
+					class="nav-link" href="/restaurante/formularioUsuario">Cadastrar-se</a>
+				</li>
+				<li sec:authorize="!isAuthenticated()" class="nav-item"><a
+					class="nav-link" href="/restaurante/paginaLogin">Entrar</a></li>
+				<li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_CLIENT')"
+					class="nav-item"><a class="nav-link" href="/logout">Sair</a></li>
+			</ul>
+
+		</div>
+
+	</nav>
+
+
+	<!-- =========== Sobre o Restaurante ============= -->
+	<section id="logomarca">
+		<img src="/img/logo2.png" alt="Logomarca">
+	</section>
+	<section id="rest-descricao">
+		<h3>&#43Sobre Nós</h3>
+
+		<div>
+			<p>O Restaurante The Australian é um famoso e tradicional
+				restaurante Australiano localizado na cidade de Quixadá-CE. Fundado
+				em 1989, é o lugar preferido de muitas figuras importantes do
+				cenário brasileiro, como o fantástico comediante QuiCoisa. Ao longo
+				de seus quase 30 anos de existência, buscamos sempre trazer o melhor
+				da culinária australiana, desde pratos de sua cozinha tradicional a
+				saladas, sobremesas e inovadoras combinações desenvolvidas pelos
+				melhores chefes do país.</p>
+		</div>
+
+	</section>
+
+	<section id="calendario">
+		<h3>Horários de Funcionamento</h3>
+		<table>
+			<tr>
+				<th>Segunda-Feira</th>
+				<th>Terça-Feira</th>
+				<th>Quarta-Feira</th>
+				<th>Quinta-Feira</th>
+				<th>Sexta-Feira</th>
+				<th>Sábado</th>
+				<th>Domingo</th>
+			</tr>
+			<tr>
+				<td>10:00 - 22:00</td>
+				<td>10:00 - 22:00</td>
+				<td>10:00 - 22:00</td>
+				<td>10:00 - 22:00</td>
+				<td>10:00 - 22:00</td>
+				<td>18:00 - 23:00</td>
+				<td>18:00 - 23:00</td>
+
+			</tr>
+
+		</table>
+	</section>
+
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+	<script>
+		
+	</script>
+</body>
+</html>

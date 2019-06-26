@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+
+form{
+	text-align:center;
+	border: 1px solid black;
+	width: 50%;
+	margin: auto;
+	padding: 2%;
+}
+
+form div{
+	
+	margin: auto;	
+}
+
+header h3{
+	text-align:center;
+	margin: 3% auto 3% auto;
+}
+
+#submenu{
+	text-align: right;
+	margin:auto 5% 3% auto;
+}
+
+#submenu #valor{
+	margin-right: 12%;
+}
+
+#valor span{
+	color: red;
+}
+
+/*===== Pagina Inicial*/
+#logomarca {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: 2% 0% 0% 2%;
+    /* border: 1px solid black; */
+    background-color: white;
+    border-radius: 20px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 1px 2px 5px white;
+}
+
+#rest-descricao {
+    /* border: 1px solid black; */
+    margin: 6% 0% 6% 45%;
+    padding: 25px;
+    width: 45%;
+    background-color: orange;
+    border-radius: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: justify;
+    overflow: auto;
+    box-shadow: 1px 2px 5px orange;
+    word-break: break-all;
+}
+
+#rest-descricao h3 {
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 2%;
+    background-color: brown;
+    border-radius: 10px 10px 10px 10px;
+    width: 40%;
+}
+
+#rest-descricao h3:hover {
+    cursor: pointer;
+}
+
+#calendario {
+    position: relative;
+    margin: 0% 0% 5% 15%;
+    width: 70%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: justify;
+    word-break: break-all;
+}
+
+#calendario th, #calendario tr, #calendario td, #calendario table {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    background-color: blue;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#calendario th {
+    background-color: olive;
+}
+
+#calendario td {
+    background-color: orange;
+}
+	
+#calendario h3 {
+    margin-bottom: 1%;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    background-color: brown;
+    width: 85%;
+    overflow: auto;
+    padding: 2px;
+    border-radius: 5px 5px 5px 5px;
+  
+}
+

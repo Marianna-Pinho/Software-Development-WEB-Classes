@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Clientes</title>
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+
+	<!-- Barra de navegação -->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+		<a class="navbar-brand" href="/restaurante/paginaInicial"> <img
+			src="/img/logo2.png" width="100" height="50"
+			class="d-inline-block align-top" alt="LogoMarca">
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+
+				<li class="nav-item"><a class="nav-link"
+					href="/restaurante/paginaInicial">Página Inicial</a></li>
+
+				<li class="nav-item"><a class="nav-link"
+					href="/restaurante/listarPratos">Galeria de Pratos</a></li>
+
+				<li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item"><a
+					class="nav-link" href="/restaurante/formularioPrato">Cadastrar
+						Pratos</a></li>
+
+				<li sec:authorize="hasRole('ROLE_CLIENT')" class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+					aria-haspopup="true"> Pedidos </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/restaurante/carrinhoCompras">Carrinho
+							de Compras</a> <a class="dropdown-item"
+							href="/restaurante/historicoPedidos">Histórico de Pedidos</a>
+					</div>
+				</li>
+
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<li sec:authorize="!isAuthenticated()" class="nav-item active">
+					<a class="nav-link" href="/restaurante/formularioUsuario">Cadastrar-se
+						<span class="sr-only">(current)</span>
+				</a>
+				</li>
+				<li sec:authorize="!isAuthenticated()" class="nav-item"><a
+					class="nav-link" href="/restaurante/paginaLogin">Entrar</a></li>
+				<li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_CLIENT')"
+					class="nav-item"><a class="nav-link" href="/logout">Sair</a></li>
+			</ul>
+
+		</div>
+
+	</nav>
+<!-- ============================= Formulário de Cadastro ===================== -->
+
+	<header> <h3> Formulário de Cadastro </h3></header>
+
+	<form action="/restaurante/salvarUsuario" method="post"
+		th:object="${usuario}">
+
+		<!-- Alertas -->
+		<div class="alert alert-success" role="alert"
+			th:if="${!#strings.isEmpty(mensagem)}">
+			<span th:text="${mensagem}"></span>
+		</div>
+
+		<div class="alert alert-danger" role="alert"
+			th:if="${#fields.hasAnyErrors()}">
+			<div th:each="detailedError : ${#fields.detailedErrors()}">
+				<span th:text="${detailedError.message}"></span>
+			</div>
+		</div>
+
+		<!-- Campos do Formulário -->
+
+		<input type="hidden" th:field="*{codigo}">
+
+
+		<div class="form-group">
+			<label for="Nome">Nome</label> <input type="text"
+				class="form-control" id="Nome"
+				aria-describedby="nomeHelp" placeholder="Escreva seu nome"
+				th:field="*{nome}">
+		</div>
+
+		<div class="form-group">
+			<label for="CPF">CPF</label> <input type="text"
+				class="form-control" id="CPF"
+				aria-describedby="nomeCPF" placeholder="Escreva seu cpf"
+				th:field="*{cpf}">
+		</div>
+
+		<div class="form-group">
+			<label for="Data">Data de Nascimento</label> <input type="text"
+				class="form-control" id="DataNascimento"
+				aria-describedby="nomeData" placeholder="dd/mm/aaaa"
+				th:field="*{dataNascimento}">
+		</div>
+		
+		<div class="form-group">
+			<label for="Endereco">Endereço</label> <input type="text"
+				class="form-control" id="Endereco"
+				aria-describedby="nomeEndereco" placeholder="Escreva seu endereço"
+				th:field="*{endereco}">
+		</div>
+		
+		<div class="form-group">
+			<label for="Email">Email</label> <input type="email"
+				class="form-control" id="Email"
+				aria-describedby="nomeEmail" placeholder="xxxx@xxxx"
+				th:field="*{login}">
+		</div>
+		
+		<div class="form-group">
+			<label for="Senha">Senha</label> <input type="password"
+				class="form-control" id="Senha"
+				aria-describedby="nomeSenha" placeholder="Escreva sua senha"
+				th:field="*{senha}">
+		</div>
+		
+		<!-- Botão -->
+		<button type="submit" class="btn btn-primary">Cadastrar</button>
+
+	</form>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
